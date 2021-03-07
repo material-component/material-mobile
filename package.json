@@ -1,11 +1,16 @@
 {
   "name": "vite-project",
   "version": "0.0.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "prepare": "husky install"
+    "serve": "vite preview"
   },
   "dependencies": {
     "vue": "^3.0.5"

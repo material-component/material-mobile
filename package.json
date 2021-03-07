@@ -36,7 +36,6 @@
       "eslint",
       "prettier --parser=typescript --write"
     ],
-    "*.js": "eslint --cache --fix"
   },
   "husky": {
     "hooks": {

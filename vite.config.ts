@@ -9,7 +9,7 @@ export default defineConfig({
       external: ['vue']
     },
     lib: {
-      entry: 'src/main.ts',
+      entry: 'src/index.ts',
       name: 'main',
       formats: ['es', 'umd']
     }

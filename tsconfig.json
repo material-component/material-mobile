@@ -8,12 +8,13 @@
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
+    "outDir": "./dist/typeing",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": ["vite/client"],
     "allowJs": true,
-    "outDir": "./dist/es",
     "paths": {
       "@/*": ["src/*"]
     }

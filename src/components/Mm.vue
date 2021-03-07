@@ -4,8 +4,7 @@
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a
+    +<a
       href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
       target="_blank"
       >Vetur</a
@@ -40,6 +39,7 @@ export default defineComponent({
   props: {
     msg: {
       type: String,
+
       required: true
     }
   },

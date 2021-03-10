@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import Button from './components/Button/index'
+import Button from './components/Button/src/Button.md'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

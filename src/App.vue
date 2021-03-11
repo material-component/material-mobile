@@ -1,11 +1,11 @@
 <template>
-  <div class="demo">
+  <div>
     <Button />
   </div>
 </template>
 
 <script lang="ts">
-import Button from './components/Button/src/Button.md'
+import { Button } from './components/Button/index'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -16,4 +16,4 @@ export default defineComponent({
 })
 </script>
 
-<style></style>
+<style lang="less"></style>

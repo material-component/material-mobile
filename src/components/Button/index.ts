@@ -1,4 +1,5 @@
 import Button from './src/Button.vue'
 
-export { Button }
-export default Button
+import ButtonMd from './src/Button.md'
+
+export { Button, ButtonMd }

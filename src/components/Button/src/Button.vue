@@ -1,5 +1,7 @@
 <template>
-  <div class="add">2323</div>
+  <div class="add2">
+    <span class="material-icons">face</span>
+  </div>
 </template>
 
 <script lang="ts">
@@ -7,7 +9,7 @@ export default {}
 </script>
 
 <style lang="less">
-.add {
-  height: 200px;
+.add2 {
+  height: 20px;
 }
 </style>

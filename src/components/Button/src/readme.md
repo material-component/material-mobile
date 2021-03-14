@@ -1,7 +1,9 @@
-# Button 按钮组件
 
-### 介绍
+# Button
 
-按钮用于触发一个操作，如提交表单。
 
-### 安装
+<script setup>
+import Button from './Button.vue'
+</script>
+
+<Button/>

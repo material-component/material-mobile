@@ -17,7 +17,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        additionalData: `@import "@/styles/font.less";@import "@/styles/init.less";`
+        additionalData: `@import "@/styles/init.less";`
       }
     }
   },

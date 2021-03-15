@@ -17,6 +17,20 @@
           "desc": "按钮用于触发一个操作，如提交表单。"
         }
       ]
+    },
+    {
+      "name": "布局组件",
+      "packages": [
+        {
+          "name": "layout",
+          "sort": 1,
+          "url": "/layout/src",
+          "cName": "布局组件",
+          "type": "component",
+          "show": true,
+          "desc": "按钮用于触发一个操作，如提交表单。"
+        }
+      ]
     }
   ]
 }

@@ -1,4 +1,4 @@
-import Col from './src/Col.vue'
+import Col from './src/Col'
 
 export { Col }
 export default Col

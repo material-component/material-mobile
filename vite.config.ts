@@ -8,6 +8,11 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
   },
+  esbuild: {
+    jsxInject: `import {h} from 'vue'`,
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment'
+  },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/]

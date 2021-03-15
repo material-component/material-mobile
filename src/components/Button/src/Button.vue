@@ -1,5 +1,8 @@
 <template>
-  <button class="btn-indigo">23</button>
+  <button class="btn-indigo">
+    232
+    {{ slots }}
+  </button>
 </template>
 
 <script lang="ts">

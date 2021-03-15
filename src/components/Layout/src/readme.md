@@ -2,16 +2,5 @@
 # 2323
 
 
-<script setup>
-import col from '../../Button/src/Button.vue'
-
-</script>
-
-
-
-<col>
-  <col>232</col>
-<col/>
-
-
+<col>223232<col/>
 

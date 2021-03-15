@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import { Col } from '../components/Col/index'
 // import '@/sites/assets/styles/reset.scss'
 // import '@/sites/assets/styles/md-style.scss'
 import DemoBlock from './components/demo-block'
@@ -10,4 +11,8 @@ import DemoBlock from './components/demo-block'
 // if (isMobile) {
 //   location.replace('demo.html' + location.hash);
 // }
-createApp(App).component('demo-block', DemoBlock).use(router).mount('#app')
+createApp(App)
+  .component('demo-block', DemoBlock)
+  .use(Col)
+  .use(router)
+  .mount('#app')

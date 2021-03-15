@@ -7,11 +7,6 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const classes = computed(() => [])
-    return () => (
-      <div class={classes.value}>
-        23
-        {slots}
-      </div>
-    )
+    return () => <div class={classes.value}>{slots.default?.()}</div>
   }
 })

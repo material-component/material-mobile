@@ -6,4 +6,4 @@
 import Button from './Button.vue'
 </script>
 
-<Button/>
+<Button />

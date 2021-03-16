@@ -1,5 +1,8 @@
 # 2323
 
-<Col>2323</Col>
 
-<Row>2323</Row>
+
+<Row>
+  <Col :span="8" >2323</Col>
+  <Col :span="8" >2323</Col>
+</Row>

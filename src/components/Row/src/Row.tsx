@@ -6,7 +6,7 @@ export default defineComponent({
   props,
 
   setup(props, { slots }) {
-    const classes = computed(() => ['box-border'])
+    const classes = computed(() => ['box-border flex-1/24'])
     return () => <div class={classes.value}>{slots.default?.()}</div>
   }
 })

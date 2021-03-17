@@ -8,6 +8,11 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
   },
+  esbuild: {
+    jsxInject: `import {h} from 'vue'`,
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment'
+  },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/]
@@ -17,7 +22,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        additionalData: `@import "@/styles/font.less";@import "@/styles/init.less";`
+        additionalData: `@import "@/styles/init.less";`
       }
     }
   },

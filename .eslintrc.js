@@ -10,6 +10,7 @@ module.exports = {
     ecmaVersion: 2020
   },
   extends: [
+    'plugin:tailwind/recommended',
     'plugin:vue/vue3-essential',
     '@vue/typescript/recommended',
     'eslint:recommended',
@@ -30,5 +31,9 @@ module.exports = {
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
     ]
+  },
+  globals: {
+    h: true,
+    HTMLElementTagNameMap: true
   }
 }

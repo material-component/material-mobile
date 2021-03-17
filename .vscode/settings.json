@@ -1,6 +1,35 @@
 {
-  "eslint.codeAction.showDocumentation": {
-  
-    "enable": true
-  }
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    [
+      "class\\(([^)]*)\\)",
+      "'([^']*)'",
+    ]
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  // 保存时使用VSCode 自身格式化程序格式化
+  "editor.formatOnSave": true,
+  // 保存时用eslint格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // 两者会在格式化js时冲突，所以需要关闭默认js格式化程序 
+  "javascript.format.enable": false,
+  "less.validate": false,
+  "css.validate": false,
 }

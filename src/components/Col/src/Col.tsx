@@ -11,7 +11,6 @@ export default defineComponent({
   props,
 
   setup(props, { slots }) {
-
     const { gutter }: any = inject('ROW')
 
     const styles = computed(() => ({
@@ -19,14 +18,19 @@ export default defineComponent({
       paddingRight: `${gutter}px`
     }))
 
-    const classes = computed(() => [`col-${props.span}`, `col-offset-${props.offset}`])
+    const classes = computed(() => [
+      `col-${props.span}`,
+      `col-offset-${props.offset}`
+    ])
 
-    // @ts-ignore
-    return () => h('div', {
-      style: styles.value, class: classes.value
-    },
-      slots.default?.()
-    )
-
+    return () =>
+      h(
+        'div',
+        {
+          style: styles.value,
+          class: classes.value
+        },
+        slots.default?.()
+      )
   }
 })

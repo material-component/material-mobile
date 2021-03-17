@@ -59,6 +59,9 @@ export default defineComponent({
     width: 100%;
     &-document {
       min-height: 800px;
+      table {
+        border: 1xp solid #ccc;
+      }
     }
   }
 }

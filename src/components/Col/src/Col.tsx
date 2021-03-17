@@ -1,7 +1,8 @@
 //styles
 import './style.less'
 
-import { defineComponent, computed } from 'vue'
+// js
+import { defineComponent, computed, inject } from 'vue'
 import { props } from './props'
 
 export default defineComponent({
@@ -10,7 +11,22 @@ export default defineComponent({
   props,
 
   setup(props, { slots }) {
-    const classes = computed(() => [`col-${props.span}`])
-    return () => <div class={classes.value}>{slots.default?.()}</div>
+
+    const { gutter }: any = inject('ROW')
+
+    const styles = computed(() => ({
+      paddingLeft: `${gutter}px`,
+      paddingRight: `${gutter}px`
+    }))
+
+    const classes = computed(() => [`col-${props.span}`, `col-offset-${props.offset}`])
+
+    // @ts-ignore
+    return () => h('div', {
+      style: styles.value, class: classes.value
+    },
+      slots.default?.()
+    )
+
   }
 })

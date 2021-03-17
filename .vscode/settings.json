@@ -6,18 +6,14 @@
       "'([^']*)'",
     ]
   ],
-  // vscode默认启用了根据文件类型自动设置tabsize的选项
-  "editor.detectIndentation": false,
-  // 重新设定tabsize
-  // #每次保存的时候自动格式化 
+  // 保存时使用VSCode 自身格式化程序格式化
   "editor.formatOnSave": true,
-  // #每次保存的时候将代码按eslint格式进行修复
-  "eslint.autoFixOnSave": true,
-  // 添加 vue 支持
-  //  #让prettier使用eslint的代码格式进行校验 
-  "prettier.eslintIntegration": true,
-  // #让vue中的js按编辑器自带的ts格式进行格式化 
-  // 格式化stylus, 需安装Manta's Stylus Supremacy插件
+  // 保存时用eslint格式化
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // 两者会在格式化js时冲突，所以需要关闭默认js格式化程序 
+  "javascript.format.enable": false,
   "less.validate": false,
   "css.validate": false,
 }

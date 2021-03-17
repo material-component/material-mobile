@@ -43,6 +43,10 @@
     "*.{js,vue}": [
       "eslint",
       "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint",
+      "prettier --write"
     ]
   },
   "postcss": {

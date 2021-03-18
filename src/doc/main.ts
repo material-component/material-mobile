@@ -5,7 +5,7 @@ import Com from '../components/index'
 // import '@/sites/assets/styles/reset.scss'
 // import '@/sites/assets/styles/md-style.scss'
 import DemoBlock from './components/demo-block'
-
+import 'vite-plugin-vuedoc/style.css'
 // import { isMobile } from '@/sites/assets/util';
 
 // if (isMobile) {

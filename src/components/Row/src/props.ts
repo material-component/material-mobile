@@ -14,16 +14,19 @@ export const props = {
     type: [Number, String],
     default: 0
   },
+
   justify: {
     type: String as PropType<FlexJustify>,
     default: null,
     validator: justifyValidator
   },
+
   align: {
     type: String as PropType<FlexAlign>,
     default: null,
     validator: alignValidator
   },
+
   tag: {
     type: String as PropType<keyof HTMLElementTagNameMap>,
     default: 'div'

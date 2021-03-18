@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
+import vitePluginVuedoc, { vueDocFiles } from 'vite-plugin-vuedoc'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import Markdown from 'vite-plugin-md'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,10 +14,12 @@ export default defineConfig({
     jsxFragment: 'Fragment'
   },
   plugins: [
-    vue({
-      include: [/\.vue$/, /\.md$/]
+    vitePluginVuedoc({
+      wrapperClass: '#app'
     }),
-    Markdown()
+    vue({
+      include: [...vueDocFiles]
+    })
   ],
   css: {
     preprocessorOptions: {

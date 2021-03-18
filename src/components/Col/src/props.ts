@@ -6,6 +6,7 @@ export const props = {
       return val < 24
     }
   },
+
   offset: {
     type: [Number, String],
     default: 0

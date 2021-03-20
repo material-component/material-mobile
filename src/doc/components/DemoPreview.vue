@@ -6,14 +6,15 @@ export default defineComponent({
   name: 'doc-demo-preview',
   setup() {
     const route = useRoute()
-    const state = ref(changeRouterPath({ path: route.path }))
+    const state = ref(h('div', null))
     // const router = routers.afterEach((to) => {
     //
     // })
     watch(
       () => route.path,
-      (newParams) => {
-        state.value = changeRouterPath({ path: newParams })
+      (newVal, oldVal) => {
+        if (newVal === oldVal || newVal === '/') return
+        state.value = changeRouterPath({ path: newVal })
       }
     )
     return () => h('div', { class: 'doc-demo-preview' }, state.value)

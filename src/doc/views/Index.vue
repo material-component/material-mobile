@@ -4,9 +4,8 @@
     <div class="doc-content-document">
       <router-view />
     </div>
-    <div class="doc-content-demo">
-      <doc-demo-preview></doc-demo-preview>
-    </div>
+
+    <doc-demo-preview></doc-demo-preview>
 
     <!-- <component :is="state.component"></component> -->
   </div>
@@ -30,11 +29,11 @@ export default defineComponent({
 <style lang="less" scoped>
 .doc {
   &-content {
-    display: flex;
-    width: 100%;
-    padding-right: 40px;
+    overflow: hidden;
+    margin-left: 190px;
+    margin-right: 395px;
     &-document {
-      padding: 40px;
+      padding: 20px;
       flex: 1;
       min-height: 800px;
       table {

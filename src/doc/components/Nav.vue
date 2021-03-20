@@ -66,13 +66,13 @@ export default defineComponent({
 <style lang="less">
 .doc {
   &-nav {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1;
     background: #fff;
-    width: 220px;
+    width: 190px;
     border-right: 1px solid #eee;
     overflow: auto;
     padding-left: 35px;

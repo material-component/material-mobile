@@ -9,7 +9,8 @@ export default defineComponent({
     const state = ref(h('div', null))
 
     onMounted(() => {
-      state.value = changeRouterPath({ path: route.path })
+      if (route.path !== '/')
+        state.value = changeRouterPath({ path: route.path })
     })
 
     watch(
@@ -54,16 +55,17 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-.doc {
-  &-demo-preview {
-    height: 667px;
-    width: 375px;
-    // position: fixed;
-    // right: 30px;
-    // top: 100px;
-    box-shadow: #ebedf0 0 4px 12px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
+.doc-demo-preview {
+  height: 667px;
+  width: 375px;
+  // position: fixed;
+  // right: 30px;
+  // top: 100px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  box-shadow: #ebedf0 0 4px 12px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 </style>

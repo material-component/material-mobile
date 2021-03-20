@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, h, ref, watch } from 'vue'
+import { defineComponent, h, ref, watch, onMounted } from 'vue'
 import routers from '../router'
 import { useRoute } from 'vue-router'
 export default defineComponent({
@@ -7,9 +7,11 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const state = ref(h('div', null))
-    // const router = routers.afterEach((to) => {
-    //
-    // })
+
+    onMounted(() => {
+      state.value = changeRouterPath({ path: route.path })
+    })
+
     watch(
       () => route.path,
       (newVal, oldVal) => {

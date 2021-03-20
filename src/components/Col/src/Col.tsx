@@ -1,4 +1,5 @@
 //styles
+import '../../../styles/tailwind.css'
 import './style.less'
 
 // js

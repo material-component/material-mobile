@@ -8,7 +8,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="css">
 #app {
   font-family: PingFangSC-Regular;
   -webkit-font-smoothing: antialiased;

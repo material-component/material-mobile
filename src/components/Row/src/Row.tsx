@@ -1,3 +1,5 @@
+import '../../../styles/tailwind.css'
+
 import { defineComponent, computed, provide, toRefs, unref } from 'vue'
 
 import { props } from './props'

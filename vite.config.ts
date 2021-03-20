@@ -23,6 +23,9 @@ export default defineConfig({
   ],
   css: {
     preprocessorOptions: {
+      // css: {
+      //   additionalData: `@import "@/styles/tailwind.css;`
+      // },
       less: {
         additionalData: `@import "@/styles/init.less";`
       }

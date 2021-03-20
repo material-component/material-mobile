@@ -31,6 +31,7 @@ export default {
   .online-btn {
     display: block;
     padding: 10px;
+
     background: #eee;
     cursor: pointer;
   }

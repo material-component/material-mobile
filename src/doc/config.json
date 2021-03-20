@@ -1,8 +1,5 @@
 {
-
-  "docs": {
-
-  },
+  "docs": {},
   "nav": [
     {
       "name": "布局组件",
@@ -10,7 +7,7 @@
         {
           "name": "Button",
           "sort": 1,
-          "url": "/button/src",
+          "url": "/Button/src",
           "cName": "按钮组件",
           "type": "component",
           "show": true,
@@ -22,9 +19,9 @@
       "name": "布局组件",
       "packages": [
         {
-          "name": "layout",
+          "name": "Layout",
           "sort": 1,
-          "url": "/layout/src",
+          "url": "/Layout/src",
           "cName": "布局组件",
           "type": "component",
           "show": true,

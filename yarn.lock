@@ -3670,14 +3670,6 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vite-plugin-md@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/vite-plugin-md/-/vite-plugin-md-0.6.1.tgz#de39870fedf2985985342e9af5c459294a233bd1"
-  integrity sha512-dJ06wlic1Gprb+PLpTpwkoufm+/5wtBUwSIMvMa9mql34eqY+DZpOdz7s2FpdRAe/6XSRFH4oHVp0xfUnZp52Q==
-  dependencies:
-    gray-matter "^4.0.2"
-    markdown-it "^12.0.4"
-
 vite-plugin-vuedoc@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmjs.org/vite-plugin-vuedoc/-/vite-plugin-vuedoc-3.1.3.tgz#37d7eb1ee7e8bc92890b5a54c60af38780d4c14c"
@@ -3734,7 +3726,7 @@ vue-router@^4.0.5:
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.0.5.tgz#dd0a4134bc950c37aef64b973e9ee1008428d8fa"
   integrity sha512-AQq+pllb6FCc7rS6vh4PPcce3XA1jgK3hKNkQ4hXHwoVN7jOeAOMKCnX7XAX3etV9rmN7iNW8iIwgPk95ckBjw==
 
-vue@^3.0.5:
+vue@3.0.7:
   version "3.0.7"
   resolved "https://registry.npmjs.org/vue/-/vue-3.0.7.tgz#8bcff51f8be570f9e4ce8cc5f52e2ab0fe3c74a1"
   integrity sha512-8h4TikD+JabbMK9aRlBO4laG0AtNHRPHynxYgWZ9sq1YUPfzynd9Jeeb27XNyZytC7aCQRX9xe1+TQJuc181Tw==

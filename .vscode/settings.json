@@ -1,11 +1,4 @@
 {
-  "tailwindCSS.experimental.classRegex": [
-    "tw`([^`]*)",
-    [
-      "class\\(([^)]*)\\)",
-      "'([^']*)'",
-    ]
-  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",

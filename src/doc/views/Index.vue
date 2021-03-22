@@ -26,7 +26,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .doc {
   &-content {
     overflow: hidden;

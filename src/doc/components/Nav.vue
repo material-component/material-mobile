@@ -20,7 +20,9 @@
       </ul>
     </ol>
     <ol v-for="_nav in nav" :key="_nav">
-      <li>{{ _nav.name }}</li>
+      <li>
+        {{ _nav.name }}
+      </li>
       <ul>
         <template
           :class="{ active: isActive(_package.name) }"
@@ -63,7 +65,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="scss">
 .doc {
   &-nav {
     position: absolute;

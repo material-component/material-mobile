@@ -24,7 +24,7 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .online-part {
   display: flex;
   justify-content: flex-end;

@@ -54,7 +54,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="scss">
 .doc-demo-preview {
   height: 667px;
   width: 375px;

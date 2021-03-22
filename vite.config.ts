@@ -26,8 +26,8 @@ export default defineConfig({
       // css: {
       //   additionalData: `@import "@/styles/tailwind.css;`
       // },
-      less: {
-        additionalData: `@import "@/styles/init.less";`
+      scss: {
+        additionalData: `@import "@/styles/index.scss";`
       }
     }
   },

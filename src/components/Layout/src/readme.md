@@ -18,7 +18,7 @@ wrapperClass: md-flex
 <template>
     <Row>
         <Col :span="12">
-            <div class="text-center pt-3 pb-3 rounded bg-blue-500 text-white">span:12</div>
+            <div class="indigo-lighten-5">span:12</div>
         </Col>
         <Col :span="12" :offset="2">
             <div class="pt-3 pb-3 rounded bg-blue-700 text-center text-white">span:12</div>

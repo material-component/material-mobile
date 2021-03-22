@@ -1,6 +1,5 @@
 //styles
-import '../../../styles/tailwind.css'
-import './style.less'
+import './style.scss'
 
 // js
 import { defineComponent, computed, inject } from 'vue'
@@ -25,6 +24,7 @@ export default defineComponent({
     ])
 
     return () =>
+      // @ts-ignore
       h(
         'div',
         {

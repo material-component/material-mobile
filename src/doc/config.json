@@ -21,7 +21,7 @@
         {
           "name": "Layout",
           "sort": 1,
-          "url": "/Layout/src",
+          "url": "/Col/src",
           "cName": "布局组件",
           "type": "component",
           "show": true,

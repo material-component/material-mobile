@@ -15,7 +15,7 @@ export default defineConfig({
   },
   plugins: [
     vitePluginVuedoc({
-      wrapperClass: '#app'
+      wrapperClass: 'warpper_doc'
     }),
     vue({
       include: [...vueDocFiles]

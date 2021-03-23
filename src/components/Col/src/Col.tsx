@@ -19,6 +19,7 @@ export default defineComponent({
     }))
 
     const classes = computed(() => [
+      'col',
       `col-${props.span}`,
       `col-offset-${props.offset}`
     ])

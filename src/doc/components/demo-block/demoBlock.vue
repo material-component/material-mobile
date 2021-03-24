@@ -24,13 +24,14 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .online-part {
   display: flex;
   justify-content: flex-end;
   .online-btn {
     display: block;
     padding: 10px;
+
     background: #eee;
     cursor: pointer;
   }

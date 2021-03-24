@@ -30,7 +30,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       'error',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
-    ]
+    ],
+    '@typescript-eslint/ban-ts-comment': 'off'
   },
   globals: {
     h: true,

@@ -1,4 +1,7 @@
-import { defineComponent, computed, provide, toRefs, unref } from 'vue'
+//style
+import './style.scss'
+
+import { defineComponent, computed, provide, toRefs, unref, h } from 'vue'
 
 import { props } from './props'
 export default defineComponent({
@@ -19,10 +22,10 @@ export default defineComponent({
       justifyContent: justify.value,
       alignItems: align.value
     }))
-
-    const classes = computed(() => ['container', 'overflow-hidden', 'flex'])
+    const classes = computed(() => ['row'])
 
     return () =>
+      //@ts-ignore
       h(
         tag.value,
         {

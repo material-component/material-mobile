@@ -1,28 +1,30 @@
 import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import vitePluginVuedoc, { vueDocFiles } from 'vite-plugin-vuedoc'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import Markdown from 'vite-plugin-md'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
   },
-  esbuild: {
-    jsxInject: `import {h} from 'vue'`,
-    jsxFactory: 'h',
-    jsxFragment: 'Fragment'
-  },
   plugins: [
-    vue({
-      include: [/\.vue$/, /\.md$/]
+    vueJsx(),
+    vitePluginVuedoc({
+      wrapperClass: 'warpper_doc'
     }),
-    Markdown()
+    vue({
+      include: [...vueDocFiles]
+    })
   ],
   css: {
     preprocessorOptions: {
-      less: {
-        additionalData: `@import "@/styles/init.less";`
+      // css: {
+      //   additionalData: `@import "@/styles/tailwind.css;`
+      // },
+      scss: {
+        additionalData: `@import "@/styles/index.scss";`
       }
     }
   },
@@ -31,9 +33,9 @@ export default defineConfig({
       external: ['vue']
     },
     lib: {
-      entry: 'src/index.ts',
+      entry: 'src/doc/main.ts',
       name: 'main',
-      formats: ['es', 'umd']
+      formats: ['es']
     }
   }
 })

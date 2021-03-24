@@ -90,16 +90,17 @@ export default defineComponent({
 .doc-demo-preview {
   height: 667px;
   width: 375px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
   // position: fixed;
   // right: 30px;
   // top: 100px;
-  position: absolute;
+  position: fixed;
   right: 20px;
-  top: 0;
+  top: 20px;
   background: #f2f2f2;
   box-shadow: #ebedf0 0 4px 12px;
   border-radius: 12px;
-  overflow: hidden;
+  overflow-y: auto;
 }
 </style>

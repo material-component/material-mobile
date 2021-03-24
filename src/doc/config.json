@@ -2,7 +2,7 @@
   "docs": {},
   "nav": [
     {
-      "name": "布局组件",
+      "name": "基础组件",
       "packages": [
         {
           "name": "Button",
@@ -10,8 +10,7 @@
           "url": "/Button/src",
           "cName": "按钮组件",
           "type": "component",
-          "show": true,
-          "desc": "按钮用于触发一个操作，如提交表单。"
+          "show": true
         }
       ]
     },
@@ -24,8 +23,7 @@
           "url": "/Col/src",
           "cName": "布局组件",
           "type": "component",
-          "show": true,
-          "desc": "按钮用于触发一个操作，如提交表单。"
+          "show": true
         }
       ]
     }

@@ -2,7 +2,7 @@
 import './style.scss'
 
 // js
-import { defineComponent, computed, inject } from 'vue'
+import { defineComponent, computed, inject, h } from 'vue'
 import { props } from './props'
 
 export default defineComponent({

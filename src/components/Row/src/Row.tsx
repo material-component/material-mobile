@@ -1,7 +1,7 @@
 //style
 import './style.scss'
 
-import { defineComponent, computed, provide, toRefs, unref } from 'vue'
+import { defineComponent, computed, provide, toRefs, unref, h } from 'vue'
 
 import { props } from './props'
 export default defineComponent({

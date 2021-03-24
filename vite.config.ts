@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import vitePluginVuedoc, { vueDocFiles } from 'vite-plugin-vuedoc'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
@@ -8,12 +9,8 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
   },
-  esbuild: {
-    jsxInject: `import {h} from 'vue'`,
-    jsxFactory: 'h',
-    jsxFragment: 'Fragment'
-  },
   plugins: [
+    vueJsx(),
     vitePluginVuedoc({
       wrapperClass: 'warpper_doc'
     }),
@@ -36,9 +33,9 @@ export default defineConfig({
       external: ['vue']
     },
     lib: {
-      entry: 'src/index.ts',
+      entry: 'src/doc/main.ts',
       name: 'main',
-      formats: ['es', 'umd']
+      formats: ['es']
     }
   }
 })

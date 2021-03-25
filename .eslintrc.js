@@ -29,7 +29,11 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/no-unused-vars': [
       'error',
-      { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true
+      }
     ],
     '@typescript-eslint/ban-ts-comment': 'off'
   },

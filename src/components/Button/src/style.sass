@@ -1,0 +1,65 @@
+@import '../../../styles/index.scss'
+
+.button
+  align-content: center
+  overflow: visible
+  position: relative
+  border-radius: $border-radius-root
+  display: inline-flex
+  justify-content: center
+  line-height: $line-height-root
+  overflow: visible
+  cursor: pointer
+  outline: none
+  user-select: none
+  text-decoration: none
+  transition-property: box-shadow, transform, opacity
+  transition: 0.28s $standard-easing
+  vertical-align: middle
+  +states('.v-btn__overlay')
+
+  &--large
+    font-size: 14px
+    height: 44px
+    line-height: 44px
+    padding: 0 20px
+  &--normal
+    padding: 0 16px
+    height: 36px
+    line-height: 36px
+    font-size: 14px
+
+  &--small
+    padding: 0 8px
+    height: 28px
+    line-height: 28px
+    font-size: 12px
+
+  &--mini
+    padding: 0 4px
+    height: 20px
+    line-height: 20px
+    font-size: 10px
+  &--block
+    display: flex
+    flex: 1 0 auto
+    min-width: 100%
+  &--disabled
+    color: rgba(0,0,0,0.26)
+    opacity: 1
+    background-color: rgba(0,0,0,0.12)
+    box-shadow: none
+    pointer-events: none
+    .v-btn__overlay
+      opacity: 0
+.v-btn__overlay
+  background-color: currentColor
+  border-radius: inherit
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  pointer-events: none
+  opacity: 0
+  transition: opacity 0.2s ease-in-out

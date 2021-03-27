@@ -1,5 +1,5 @@
 // type ts
-import { buttonSize } from './type'
+import { buttonSize, buttonType } from './type'
 
 // vue type
 import { PropType } from 'vue'
@@ -14,5 +14,11 @@ export const props = {
     default: 'button'
   },
   block: Boolean,
-  disabled: Boolean
+  disabled: Boolean,
+  icon: String,
+  plain: Boolean,
+  type: {
+    type: String as PropType<buttonType>,
+    default: 'default'
+  }
 }

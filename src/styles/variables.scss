@@ -7,22 +7,19 @@ $line-height-root: 1.5 !default;
 $border-color-root: rgba(0, 0, 0, 0.12) !default;
 $border-radius-root: 4px !default;
 $border-style-root: solid !default;
-$shadow-root: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-// 主要颜色
+$shadow-root: 0 3px 1px -2px rgba(0, 0, 0, .2),
+0 2px 2px 0 rgba(0, 0, 0, .14),
+0 1px 5px 0 rgba(0, 0, 0, .12); // 主要颜色
 
 $black: #000;
 $white: #fff;
 
-// 主色
-$primary: #1976D2;
-// 副色
-$secondary: #424242;
+
+$default: $white;
+
+$primary: #5cbbf6;
 // 错误
-$error: #FF5252;
-// 初始化
-$info: #2196F3;
+$danger: #FF5252;
 // 成功
 $success: #4CAF50;
 // 警告

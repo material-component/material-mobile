@@ -11,6 +11,10 @@ import { defineComponent, h, withDirectives, computed } from 'vue'
 // Directives
 import { Ripple } from '@/directives/Ripple'
 
+// type
+
+import { ElementType } from './type'
+
 const TEXTCOLOR = {
   default: '#fff',
   primary: '#1976D2',
@@ -21,12 +25,12 @@ const TEXTCOLOR = {
 
 export default defineComponent({
   name: 'Button',
-  emits: ['click', 'touchstart', 'touchend', 'touchmove'],
+  emits: ['click', 'touchstart', 'touchend', 'touchmove'] as Array<ElementType>,
   props,
   setup(props, { slots, emit }) {
     const isDisabled = computed(() => props.disabled || props.loading)
 
-    const handleEvent = (e: MouseEvent | TouchEvent, type) => {
+    const handleEvent = (e: MouseEvent | TouchEvent, type: ElementType) => {
       if (props.loading) {
         e.preventDefault()
       }

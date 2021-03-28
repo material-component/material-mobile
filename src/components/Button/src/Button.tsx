@@ -59,6 +59,7 @@ export default defineComponent({
             ],
             disabled: isDisabled.value,
             style: {
+              // 当按钮为plain时将，颜色改变为type的类型颜色
               color:
                 !isDisabled.value &&
                 props.plain &&

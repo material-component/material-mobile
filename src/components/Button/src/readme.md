@@ -6,11 +6,11 @@
 ```vue demo
 <template>
     <div>
-        <Button size='normal' icon='face' plain type="primary">23</Button>
-        <Button size='large' icon='face' block disabled >232</Button>
-        <Button type="primary" icon='face'  size='mini'>2舒服点地方</Button>
-        <Button type='danger' icon='face' size='small'/>
-
+        <Button size='normal' :loading="true" round >按钮1</Button>
+        <Button size='large' type="primary"  block disabled plain round>按钮2</Button>
+        <Button type="primary" icon='face' round size='mini'>按钮3</Button>
+        <Button type='danger' icon='face' round  size='small'/>
+        <Button type="primary" icon='mdi-cloud-upload' round size='normal'>按钮3</Button>
     </div>
 </template>
 ```

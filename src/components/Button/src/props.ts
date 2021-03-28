@@ -20,5 +20,7 @@ export const props = {
   type: {
     type: String as PropType<buttonType>,
     default: 'default'
-  }
+  },
+  round: Boolean,
+  loading: Boolean
 }

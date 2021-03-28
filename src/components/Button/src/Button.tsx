@@ -6,7 +6,10 @@ import { props } from './props'
 import { useIcon } from '@/composables/icon'
 
 // vue tool
-import { defineComponent, h, withDirectives } from 'vue'
+import { defineComponent, h, withDirectives, computed } from 'vue'
+
+// Directives
+import { Ripple } from '@/directives/Ripple'
 
 const TEXTCOLOR = {
   default: '#fff',
@@ -18,8 +21,20 @@ const TEXTCOLOR = {
 
 export default defineComponent({
   name: 'Button',
+  emits: ['click', 'touchstart', 'touchend', 'touchmove'],
   props,
-  setup(props, { slots }) {
+  setup(props, { slots, emit }) {
+    const isDisabled = computed(() => props.disabled || props.loading)
+
+    const handleEvent = (e: MouseEvent | TouchEvent, type) => {
+      if (props.loading) {
+        e.preventDefault()
+      }
+      if (!props.loading && !props.disabled) {
+        emit(type, e)
+      }
+    }
+
     return () =>
       withDirectives(
         h(
@@ -30,24 +45,35 @@ export default defineComponent({
                 'button',
                 `button--${props.size}`,
                 `button${props.block ? '--block' : ''}`,
-                `button${props.disabled ? '--disabled' : ''}`,
-                `button${props.plain ? '--plain' : ''}`,
-                `button--${props.type}`
+                `button${isDisabled.value ? '--disabled' : ''}`,
+                `button${!isDisabled.value && props.plain ? '--plain' : ''}`,
+                `button${
+                  !isDisabled.value && props.type ? `--${props.type}` : ''
+                }`,
+                `button${props.round ? '--round' : ''}`
               ])
             ],
-            disabled: props.disabled,
+            disabled: isDisabled.value,
             style: {
-              color: (props.plain && props.type) ?? TEXTCOLOR[props.type]
-            }
+              color:
+                !isDisabled.value &&
+                props.plain &&
+                props.type &&
+                TEXTCOLOR[props.type]
+            },
+            onClick: (e: MouseEvent) => handleEvent(e, 'click'),
+            onTouchend: (e: TouchEvent) => handleEvent(e, 'touchend'),
+            onTouchmove: (e: TouchEvent) => handleEvent(e, 'touchmove'),
+            onTouchstart: (e: TouchEvent) => handleEvent(e, 'touchstart')
           },
 
           [
             h('span', { class: 'btn__overlay' }),
-            useIcon(props.icon),
+            useIcon(props.icon, props.loading),
             slots?.default ? slots?.default() : null
           ]
         ),
-        []
+        [[Ripple, !props.disabled]]
       )
   }
 })

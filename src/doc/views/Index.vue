@@ -6,18 +6,10 @@
       <div class="doc-rt-document">
         <router-view />
         <doc-demo-preview></doc-demo-preview>
+        <!-- <component :is="state.component"></component> -->
       </div>
     </div>
   </div>
-  <!-- <doc-nav></doc-nav>
-  <div class="doc-content">
-    <div class="doc-content-document">
-     
-    </div>
-    <doc-demo-preview></doc-demo-preview>
-
-    <component :is="state.component"></component>
-  </div> -->
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'

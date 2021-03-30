@@ -90,5 +90,5 @@ wrapperClass: md-flex
 | ------- | -------------------------------------------------------------------------------------- | -------------- | ---------- |
 | type    | 布局方式，可选值为flex                                                                 | String         | -          |
 | gutter  | 列元素之间的间距（单位为px）                                                           | String、Number | -          |
-| justify | Flex 主轴对齐方式，可选值为 flex-start flex-end flex-center space-around space-between | String         | start      |
+| justify |  Flex 主轴对齐方式，可选值为 flex-start flex-end flex-center space-around space-between | String         | start      |
 | align   | Flex 交叉轴对齐方式，可选值为 flex-start flex-center flex-end                          | String         | flex-start |

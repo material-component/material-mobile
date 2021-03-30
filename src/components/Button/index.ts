@@ -1,5 +1,7 @@
-import Button from './src/Button.vue'
+import Button from './src/Button'
 
-import ButtonMd from './src/Button.md'
+Button.install = function (app: any) {
+  app.component(Button.name, Button)
+}
 
-export { Button, ButtonMd }
+export { Button }

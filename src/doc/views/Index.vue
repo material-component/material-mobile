@@ -27,6 +27,9 @@ export default defineComponent({
 })
 </script>
 <style lang="scss">
+$doc-nav-width: 190px;
+$doc-header-height: 60px;
+
 .doc-main {
   display: flex;
   flex-direction: column;

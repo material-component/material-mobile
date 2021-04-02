@@ -1,13 +1,14 @@
 <template>
-  <doc-nav></doc-nav>
-  <div class="doc-content">
-    <div class="doc-content-document">
-      <router-view />
+  <div class="doc-main">
+    <div class="doc-header">1111</div>
+    <div class="doc-container">
+      <div class="doc-lt-nav"><doc-nav></doc-nav></div>
+      <div class="doc-rt-document">
+        <router-view />
+        <doc-demo-preview></doc-demo-preview>
+        <!-- <component :is="state.component"></component> -->
+      </div>
     </div>
-
-    <doc-demo-preview></doc-demo-preview>
-
-    <!-- <component :is="state.component"></component> -->
   </div>
 </template>
 <script lang="ts">
@@ -25,6 +26,40 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="scss">
+$doc-nav-width: 190px;
+$doc-header-height: 60px;
+
+.doc-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .doc-header {
+    height: $doc-header-height;
+    background: lightblue;
+  }
+  .doc-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: hidden;
+    .doc-lt-nav {
+      width: $doc-nav-width;
+      display: flex;
+      padding-top: 10px;
+      overflow: auto;
+    }
+    .doc-rt-document {
+      flex: 1;
+      padding-right: 415px;
+      padding-left: 15px;
+      padding-bottom: 20px;
+      overflow: auto;
+    }
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 .doc {

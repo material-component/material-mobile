@@ -68,13 +68,8 @@ export default defineComponent({
 <style lang="scss">
 .doc {
   &-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
     background: #fff;
-    width: 190px;
+    width: 100%;
     border-right: 1px solid #eee;
     overflow: auto;
     padding-left: 35px;
@@ -90,19 +85,29 @@ export default defineComponent({
         }
       }
       li {
-        height: 48px;
-        line-height: 48px;
         font-size: 14px;
         color: #000;
         font-weight: bold;
         position: relative;
       }
+      & > li {
+        height: 34px;
+        line-height: 30px;
+      }
       > ul {
         li {
-          padding-left: 29px;
+          height: 26px;
+          line-height: 26px;
+          padding-left: 15px;
           cursor: pointer;
           & > a {
             color: #000;
+            &:hover {
+              color: #4fc08d;
+            }
+          }
+          .router-link-active {
+            color: #4fc08d;
           }
         }
       }

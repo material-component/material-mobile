@@ -1,3 +1,7 @@
+$doc-nav-width:190px;
+$doc-header-height:60px;
+
+
 .vuedoc {
   >h1 {
     margin: 55px 0 20px;
@@ -68,3 +72,12 @@
 .document_wrapper {
   background: #fff;
 }
+
+.vuedoc-demo__preview,
+.document_wrapper {
+  button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+

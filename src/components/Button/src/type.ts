@@ -7,4 +7,4 @@ export type buttonType =
   | 'warning'
   | 'default'
 
-export type ElementType = 'click' | 'touchstart' | 'touchend' | 'touchmove' | 'aa'
+export type ElementType = 'click' | 'touchstart' | 'touchend' | 'touchmove'

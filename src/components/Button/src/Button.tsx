@@ -51,8 +51,7 @@ export default defineComponent({
                 `button${props.block ? '--block' : ''}`,
                 `button${isDisabled.value ? '--disabled' : ''}`,
                 `button${!isDisabled.value && props.plain ? '--plain' : ''}`,
-                `button${
-                  !isDisabled.value && props.type ? `--${props.type}` : ''
+                `button${!isDisabled.value && props.type ? `--${props.type}` : ''
                 }`,
                 `button${props.round ? '--round' : ''}`
               ])

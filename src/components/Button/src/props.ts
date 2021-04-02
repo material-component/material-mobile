@@ -22,5 +22,6 @@ export const props = {
     default: 'default'
   },
   round: Boolean,
-  loading: Boolean
+  loading: Boolean,
+  ripple: Boolean
 }

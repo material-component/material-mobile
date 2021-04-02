@@ -1,14 +1,28 @@
 {
   "docs": {},
-  "nav": [
-    {
+  "nav": [{
       "name": "基础组件",
-      "packages": [
-        {
+      "packages": [{
           "name": "Button",
           "sort": 1,
           "url": "/Button/src",
           "cName": "按钮组件",
+          "type": "component",
+          "show": true
+        },
+        {
+          "name": "Icon",
+          "sort": 1,
+          "url": "/Icon/src",
+          "cName": "ICON",
+          "type": "component",
+          "show": true
+        },
+        {
+          "name": "Rate",
+          "sort": 1,
+          "url": "/Rate/src",
+          "cName": "评分",
           "type": "component",
           "show": true
         }
@@ -16,16 +30,14 @@
     },
     {
       "name": "布局组件",
-      "packages": [
-        {
-          "name": "Layout",
-          "sort": 1,
-          "url": "/Col/src",
-          "cName": "布局组件",
-          "type": "component",
-          "show": true
-        }
-      ]
+      "packages": [{
+        "name": "Layout",
+        "sort": 1,
+        "url": "/Col/src",
+        "cName": "布局组件",
+        "type": "component",
+        "show": true
+      }]
     }
   ]
 }

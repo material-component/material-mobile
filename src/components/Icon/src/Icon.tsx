@@ -1,13 +1,19 @@
-import { useIcon } from '@/composables/icon'
+import { useIcon, iconProps } from '@/composables/icon'
 
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'Icon',
   props: {
-    icon: String
+    icon: String,
+    color: String
   },
-  setup(porps) {
-    return () => useIcon(porps.icon, false)
+  setup(props) {
+    return () =>
+      useIcon({
+        name: props.icon,
+        loading: false,
+        color: props.color
+      } as iconProps)
   }
 })

@@ -8,6 +8,7 @@ import { h, VNode, computed } from 'vue'
 export type iconProps = {
   name: string | undefined
   loading?: Boolean
+  color?: string
 }
 
 export const useIcon = function (props: iconProps): VNode | null {
@@ -18,7 +19,12 @@ export const useIcon = function (props: iconProps): VNode | null {
 
   return h(
     'span',
-    { class: classes.value },
+    {
+      class: classes.value,
+      style: {
+        color: props.color
+      }
+    },
     props.loading && !props.name ? 'autorenew' : props.name
   )
 }

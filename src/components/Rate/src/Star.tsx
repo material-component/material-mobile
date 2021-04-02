@@ -1,13 +1,27 @@
 //styles
-import './style.scss'
+import './style.sass'
+
+// tool
+import { useIcon } from '@/composables/icon'
+
+// directive
+import { Ripple } from '@/directives/Ripple'
 
 // js
-import { defineComponent } from 'vue'
+import { defineComponent, h, withDirectives } from 'vue'
 
 export default defineComponent({
   name: 'Star',
 
   setup() {
-    return () => {}
+    return () =>
+      withDirectives(
+        h('div' as any, { class: 'lllll' }, [
+          useIcon({ name: 'star_outline' })
+        ]),
+        [[Ripple]]
+      )
+
+    // <div class="lllll">{useIcon({ name: 'star_outline' })}</div>
   }
 })

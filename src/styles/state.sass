@@ -4,10 +4,6 @@
     #{$selector}
       opacity: calc(#{map-get($states, 'hover')} * 2)
 
-  &:focus
-    #{$selector}
-      opacity: calc(#{map-get($states, 'focus')} * 2)
-
   &--active
     +active-states($selector)
 
@@ -15,7 +11,3 @@
   &:hover#{$selector},
   #{$selector}
     opacity: calc(#{map-get($states, 'activated')} * 2.5)
-
-  &:focus
-    #{$selector}
-      opacity: calc(#{map-get($states, 'pressed')} * 2.5)

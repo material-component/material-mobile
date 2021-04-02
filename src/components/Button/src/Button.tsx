@@ -3,7 +3,7 @@ import './style.sass'
 
 // import
 import { props } from './props'
-import { useIcon } from '@/composables/icon'
+import { useIcon, iconProps } from '@/composables/icon'
 
 // vue tool
 import { defineComponent, h, withDirectives, computed } from 'vue'
@@ -74,7 +74,10 @@ export default defineComponent({
 
           [
             h('span', { class: 'btn__overlay' }),
-            useIcon(props.icon, props.loading),
+            useIcon({
+              name: props.icon,
+              loading: props.loading
+            } as iconProps),
             slots?.default ? slots?.default() : null
           ]
         ),

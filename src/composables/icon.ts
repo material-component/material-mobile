@@ -5,15 +5,26 @@
  */
 import { h, VNode, computed } from 'vue'
 
-export const useIcon = function (
-  name: string | undefined,
+export type iconProps = {
+  name: string | undefined
   loading?: Boolean
-): VNode | null {
-  const classes = computed(() => ['icon', `${loading ? 'loading' : null}`])
+  color?: string
+}
+
+export const useIcon = function (props: iconProps): VNode | null {
+  const classes = computed(() => [
+    'icon',
+    `${props.loading ? 'loading' : null}`
+  ])
 
   return h(
     'span',
-    { class: classes.value },
-    loading && !name ? 'autorenew' : name
+    {
+      class: classes.value,
+      style: {
+        color: props.color
+      }
+    },
+    props.loading && !props.name ? 'autorenew' : props.name
   )
 }

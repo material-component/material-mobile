@@ -1,5 +1,5 @@
 //styles
-import './style.scss'
+import './style.sass'
 
 // js
 import { defineComponent } from 'vue'
@@ -8,6 +8,6 @@ export default defineComponent({
   name: 'Rate',
 
   setup() {
-    return () => {}
+    return () => null
   }
 })

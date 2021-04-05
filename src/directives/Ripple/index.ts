@@ -1,1 +1,3 @@
-// import { Ripple } from './src/index'
+import { Ripple } from './src/index'
+
+export { Ripple }

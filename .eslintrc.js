@@ -7,7 +7,13 @@ module.exports = {
     jest: true
   },
   parserOptions: {
-    ecmaVersion: 2020
+    parser: '@typescript-eslint/parser', // 指定ESLint解析 Specifies the ESLint parser
+    ecmaVersion: 2020, // 允许解析现代ECMAScript特性 Allows for the parsing of modern ECMAScript features
+    sourceType: 'module', // 允许使用imports Allows for the use of imports
+    ecmaFeatures: {
+      tsx: true, //允许解析tsx Allows for the parsing of JSX
+      jsx: true
+    }
   },
   extends: [
     'plugin:tailwind/recommended',
@@ -29,7 +35,11 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/no-unused-vars': [
       'error',
-      { vars: 'all', args: 'after-used', ignoreRestSiblings: true }
+      {
+        vars: 'all',
+        args: 'after-used',
+        ignoreRestSiblings: true
+      }
     ],
     '@typescript-eslint/ban-ts-comment': 'off'
   },

@@ -86,7 +86,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style>
+</style>
+<style lang="scss" >
 .doc-demo-preview {
   height: 667px;
   width: 375px;
@@ -98,9 +100,10 @@ export default defineComponent({
   position: fixed;
   right: 20px;
   top: 20px;
-  background: #f2f2f2;
+  background: #fff;
   box-shadow: #ebedf0 0 4px 12px;
   border-radius: 12px;
   overflow-y: auto;
+  padding: 15px 10px !important;
 }
 </style>

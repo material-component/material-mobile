@@ -9,6 +9,10 @@ export default defineComponent({
 </script>
 
 <style>
+html,
+body {
+  height: 100%;
+}
 #app {
   font-family: PingFangSC-Regular;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +22,5 @@ export default defineComponent({
   background: #fff;
   height: 100%;
   width: 100%;
-  flex-direction: row;
-  display: flex;
 }
 </style>

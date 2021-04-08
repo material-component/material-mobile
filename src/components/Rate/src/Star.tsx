@@ -43,7 +43,7 @@ export default defineComponent({
           },
           [
             useIcon({
-              name: `${props.half ? 'star_half' : 'star'} `,
+              icon: `${props.half ? 'star_half' : 'star'} `,
               size: props.size,
               color: props.color,
               gutter: props.gutter

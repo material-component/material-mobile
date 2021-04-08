@@ -6,7 +6,7 @@
 import { h, VNode, computed } from 'vue'
 
 export type iconProps = {
-  name: string | undefined
+  icon?: string
   loading?: Boolean
   color?: string | undefined
   size?: number
@@ -29,6 +29,6 @@ export const useIcon = function (props: iconProps): VNode | null {
         fontSize: `${props.size || 20}px`
       }
     },
-    props.loading && !props.name ? 'autorenew' : props.name
+    props.loading && !props.icon ? 'autorenew' : props.icon
   )
 }

@@ -49,7 +49,6 @@ for (const path in modulesPage) {
 //     name
 //   })
 // }
-console.log(pagesRouter)
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',

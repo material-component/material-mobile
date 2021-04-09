@@ -2,7 +2,8 @@
   "docs": {},
   "nav": [{
       "name": "基础组件",
-      "packages": [{
+      "packages": [
+        {
           "name": "Button",
           "sort": 1,
           "url": "/Button/src",
@@ -23,6 +24,14 @@
           "sort": 1,
           "url": "/Rate/src",
           "cName": "评分",
+          "type": "component",
+          "show": true
+        },
+        {
+          "name": "Overlay",
+          "sort": 1,
+          "url": "/Overlay/src",
+          "cName": "遮罩层",
           "type": "component",
           "show": true
         }

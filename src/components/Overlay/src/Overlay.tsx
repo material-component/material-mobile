@@ -18,7 +18,7 @@ export default defineComponent({
           <div
             v-show={props.visible}
             class={[`_overlay__${props.position}`]}
-            style={{ backgroundColor: `rgba(0, 0, 0, .5)` }}
+            style={{ backgroundColor: `rgba(0, 0, 0, ${props.opacity})` }}
             onClick={(e) => emit('click', e)}
           >
             {slots.default?.()}

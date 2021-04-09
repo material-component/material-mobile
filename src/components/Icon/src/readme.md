@@ -6,7 +6,7 @@
 ```vue demo
 <template>
     <div > 
-        <Icon icon="face"></Icon>
+        <Icon icon="face" color="red" size="30"></Icon>
 
     </div>
 </template>

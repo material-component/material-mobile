@@ -6,9 +6,11 @@
 import { h, VNode, computed } from 'vue'
 
 export type iconProps = {
-  name: string | undefined
+  icon?: string
   loading?: Boolean
-  color?: string
+  color?: string | undefined
+  size?: number
+  gutter?: number
 }
 
 export const useIcon = function (props: iconProps): VNode | null {
@@ -22,9 +24,11 @@ export const useIcon = function (props: iconProps): VNode | null {
     {
       class: classes.value,
       style: {
-        color: props.color
+        padding: `${props.gutter === undefined ? 5 : props.gutter}px`,
+        color: props.color,
+        fontSize: `${props.size || 20}px`
       }
     },
-    props.loading && !props.name ? 'autorenew' : props.name
+    props.loading && !props.icon ? 'autorenew' : props.icon
   )
 }

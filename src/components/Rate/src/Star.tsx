@@ -10,18 +10,62 @@ import { Ripple } from '@/directives/Ripple'
 // js
 import { defineComponent, h, withDirectives } from 'vue'
 
+// props
+import { props } from './props'
+
 export default defineComponent({
   name: 'Star',
 
-  setup() {
+  props: {
+    ...props,
+
+    index: {
+      type: Number,
+      required: true
+    }
+  },
+
+  emits: ['change'],
+
+  setup(props, { emit }) {
     return () =>
       withDirectives(
-        h('div' as any, { class: 'lllll' }, [
-          useIcon({ name: 'star_outline' })
-        ]),
-        [[Ripple]]
-      )
+        h(
+          'div' as any,
+          {
+            class: 'rate-star',
+            onClick(event: MouseEvent) {
+              event.preventDefault()
+              event.stopPropagation()
 
-    // <div class="lllll">{useIcon({ name: 'star_outline' })}</div>
+              emit('change', event, clickArea(event, props.index))
+            }
+          },
+          [
+            useIcon({
+              icon: `${props.half ? 'star_half' : 'star'} `,
+              size: props.size,
+              color: props.color,
+              gutter: props.gutter
+            })
+          ]
+        ),
+        [[Ripple, !props.disabled]]
+      )
   }
 })
+
+// 点击时设置是否为半星
+function clickArea(event: MouseEvent, index: number) {
+  const {
+    offsetX,
+    // @ts-ignore
+    target: { clientHeight }
+  } = event
+
+  if (clientHeight / 2 > offsetX) {
+    return index - 0.5
+  } else {
+    return index
+  }
+}

@@ -12,19 +12,30 @@ export default defineComponent({
   emits: ['click'],
   props,
   setup(props, { slots, emit }) {
-    return () => (
-      <Teleport to="body">
-        <Transition name="overlay-fade">
-          <div
-            v-show={props.visible}
-            class={[`_overlay__${props.position}`]}
-            style={{ backgroundColor: `rgba(0, 0, 0, ${props.opacity})` }}
-            onClick={(e) => emit('click', e)}
-          >
-            {slots.default?.()}
-          </div>
-        </Transition>
-      </Teleport>
+    const handleClickOverlay = (e: MouseEvent) => emit('click', e)
+
+    const createOverlay = () => (
+      <Transition name="overlay-fade">
+        <div
+          v-show={props.visible}
+          class={[`_overlay__${props.position}`]}
+          style={{
+            backgroundColor: `rgba(0, 0, 0, ${props.opacity})`,
+            zIndex: props.zIndex
+          }}
+          onClick={handleClickOverlay}
+        >
+          {slots.default?.()}
+        </div>
+      </Transition>
     )
+
+    return () => {
+      return props.teleport ? (
+        <Teleport to={props.teleport}>{createOverlay()}</Teleport>
+      ) : (
+        createOverlay()
+      )
+    }
   }
 })

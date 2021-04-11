@@ -132,9 +132,7 @@ teleport 允许您自定义插入指定 DOM 节点
     >
       element-2
     </div>
-    <template v-if="ready">
-      <Overlay :visible="true" :teleport="teleport" position="absolute" />
-    </template>
+    <Overlay :visible="true" :teleport="teleport" position="absolute" />
   </div>
 </template>
 
@@ -143,13 +141,11 @@ import { ref, setup, onMounted } from 'vue'
 
 export default {
   setup() {
-    const ready = ref(false)
     const teleport = ref('.element-1')
     function handleClick(selector: string) {
       teleport.value = selector
     }
-    onMounted(() => (ready.value = true))
-    return { ready, teleport, handleClick }
+    return { teleport, handleClick }
   }
 }
 </script>
@@ -157,10 +153,10 @@ export default {
 
 ## props
 
-| 参数     | 说明           | 类型    | 可选值            | 默认值 |
-| -------- | -------------- | ------- | ----------------- | ------ |
-| visible  | 是否显示遮罩层 | boolean | true \| false     | false  |
-| position | 定位方式       | string  | fixed \| absolute | fixed  |
-| opacity  | 透明度         | number  | 0 ~ 1             | 0.46   |
-| teleport | 插入节点       | string  | -                 | -      |
-| z-index  | z-index 层级   | number  | -                 | 1      |
+| 参数     | 说明           | 类型              | 可选值            | 默认值 |
+| -------- | -------------- | ----------------- | ----------------- | ------ |
+| visible  | 是否显示遮罩层 | boolean           | true \| false     | false  |
+| position | 定位方式       | string            | fixed \| absolute | fixed  |
+| opacity  | 透明度         | number            | 0 ~ 1             | 0.46   |
+| teleport | 插入节点       | string \| element | -                 | -      |
+| z-index  | z-index 层级   | number            | -                 | 1      |

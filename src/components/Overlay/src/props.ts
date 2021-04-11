@@ -3,11 +3,11 @@
  */
 import { positionType } from './type'
 // vue type
-import { PropType } from 'vue'
+import { PropType, TeleportProps } from 'vue'
 
 export default {
   visible: Boolean,
-  teleport: String,
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
   opacity: {
     type: Number,
     default: 0.46

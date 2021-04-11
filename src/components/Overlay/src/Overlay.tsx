@@ -2,7 +2,7 @@
 import './style.sass'
 
 // vue tool
-import { defineComponent, Transition, Teleport } from 'vue'
+import { defineComponent, ref, Transition, Teleport, onMounted } from 'vue'
 
 // props
 import props from './props'
@@ -12,6 +12,9 @@ export default defineComponent({
   emits: ['click'],
   props,
   setup(props, { slots, emit }) {
+    const ready = ref(false)
+    onMounted(() => (ready.value = true))
+
     const handleClickOverlay = (e: MouseEvent) => emit('click', e)
 
     const createOverlay = () => (
@@ -31,11 +34,13 @@ export default defineComponent({
     )
 
     return () => {
-      return props.teleport ? (
-        <Teleport to={props.teleport}>{createOverlay()}</Teleport>
-      ) : (
-        createOverlay()
-      )
+      if (ready.value) {
+        return props.teleport ? (
+          <Teleport to={props.teleport}>{createOverlay()}</Teleport>
+        ) : (
+          createOverlay()
+        )
+      }
     }
   }
 })

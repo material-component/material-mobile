@@ -74,10 +74,11 @@ export default defineComponent({
 
           [
             h('span', { class: 'btn__overlay' }),
-            useIcon({
-              icon: props.icon,
-              loading: props.loading
-            } as iconProps),
+            props.icon &&
+              useIcon({
+                icon: props.icon,
+                loading: props.loading
+              } as iconProps),
             slots?.default ? slots?.default() : null
           ]
         ),

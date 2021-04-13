@@ -8,7 +8,19 @@ wrapperClass: md-Rate
 ```vue demo
 <template>
     <div > 
-        <Star/>
+        <Rate v-model="value" half />
     </div>
 </template>
+<script lang="ts">
+    import { defineComponent } from 'vue'
+    export default defineComponent({
+    name: 'app',
+    data(){
+        return {
+            value: 2.5
+        }
+    }
+
+    })
+</script>
 ```

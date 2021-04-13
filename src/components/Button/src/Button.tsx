@@ -51,7 +51,8 @@ export default defineComponent({
                 `button${props.block ? '--block' : ''}`,
                 `button${isDisabled.value ? '--disabled' : ''}`,
                 `button${!isDisabled.value && props.plain ? '--plain' : ''}`,
-                `button${!isDisabled.value && props.type ? `--${props.type}` : ''
+                `button${
+                  !isDisabled.value && props.type ? `--${props.type}` : ''
                 }`,
                 `button${props.round ? '--round' : ''}`
               ])
@@ -74,7 +75,7 @@ export default defineComponent({
           [
             h('span', { class: 'btn__overlay' }),
             useIcon({
-              name: props.icon,
+              icon: props.icon,
               loading: props.loading
             } as iconProps),
             slots?.default ? slots?.default() : null

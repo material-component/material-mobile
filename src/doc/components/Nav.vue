@@ -53,7 +53,7 @@ export default defineComponent({
       }
     })
     onMounted(() => {
-      console.log('123' + nav)
+      // console.log('123' + nav)
     })
     return {
       isActive,

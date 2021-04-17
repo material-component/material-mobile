@@ -2,31 +2,33 @@
 import './style.sass'
 
 // vue tool
-import { defineComponent, ref, Transition, Teleport, onMounted } from 'vue'
+import { defineComponent, Transition, Teleport } from 'vue'
+import useOverlay from './use-overlay'
 
 // props
 import props from './props'
 
 export default defineComponent({
   name: 'Overlay',
-  emits: ['click'],
+  emits: ['click', 'touchmove', 'update:visible'],
   props,
   setup(props, { slots, emit }) {
-    const ready = ref(false)
-    onMounted(() => (ready.value = true))
-
-    const handleClickOverlay = (e: MouseEvent) => emit('click', e)
+    const {
+      ready,
+      getClassName,
+      getStyle,
+      handleClick,
+      preventTouchMove
+    } = useOverlay(props, emit)
 
     const createOverlay = () => (
       <Transition name="overlay-fade">
         <div
           v-show={props.visible}
-          class={[`_overlay__${props.position}`]}
-          style={{
-            backgroundColor: `rgba(0, 0, 0, ${props.opacity})`,
-            zIndex: props.zIndex
-          }}
-          onClick={handleClickOverlay}
+          class={getClassName()}
+          style={getStyle()}
+          onClick={handleClick}
+          onTouchmove={preventTouchMove}
         >
           {slots.default?.()}
         </div>
@@ -34,13 +36,11 @@ export default defineComponent({
     )
 
     return () => {
-      if (ready.value) {
-        return props.teleport ? (
-          <Teleport to={props.teleport}>{createOverlay()}</Teleport>
-        ) : (
-          createOverlay()
-        )
-      }
+      return props.teleport && ready.value ? (
+        <Teleport to={props.teleport}>{createOverlay()}</Teleport>
+      ) : (
+        createOverlay()
+      )
     }
   }
 })

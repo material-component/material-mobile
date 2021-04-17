@@ -10,7 +10,7 @@
 <template>
   <div>
     <Button @click="visible = true">显示遮罩层</Button>
-    <Overlay :visible="visible" @click="visible = false" />
+    <Overlay v-model:visible="visible" />
   </div>
 </template>
 
@@ -48,7 +48,7 @@ absolute 遮罩层为绝对定位，并且包含在其父元素内。
       }"
     >
       absolute
-      <Overlay :visible="visible" position="absolute" />
+      <Overlay v-model:visible="visible" position="absolute" />
     </div>
   </div>
 </template>
@@ -73,7 +73,31 @@ opacity 允许您自定义遮罩层的透明度
 <template>
   <div>
     <Button @click="visible = true">显示遮罩层</Button>
-    <Overlay :visible="visible" :opacity="1" @click="visible = false" />
+    <Overlay v-model:visible="visible" :opacity="1" />
+  </div>
+</template>
+
+<script lang="ts">
+import { ref, setup } from 'vue'
+
+export default {
+  setup() {
+    const visible = ref(false)
+    return { visible }
+  }
+}
+</script>
+```
+
+### 自定义动画时间
+
+duration 允许您自定义遮罩层的动画时间
+
+```vue demo
+<template>
+  <div>
+    <Button @click="visible = true">显示遮罩层</Button>
+    <Overlay v-model:visible="visible" :duration="1" />
   </div>
 </template>
 
@@ -132,7 +156,12 @@ teleport 允许您自定义插入指定 DOM 节点
     >
       element-2
     </div>
-    <Overlay :visible="true" :teleport="teleport" position="absolute" />
+    <Overlay
+      :visible="true"
+      :teleport="teleport"
+      :close-on-click-modal="false"
+      position="absolute"
+    />
   </div>
 </template>
 
@@ -153,10 +182,15 @@ export default {
 
 ## props
 
-| 参数     | 说明           | 类型              | 可选值            | 默认值 |
-| -------- | -------------- | ----------------- | ----------------- | ------ |
-| visible  | 是否显示遮罩层 | boolean           | true \| false     | false  |
-| position | 定位方式       | string            | fixed \| absolute | fixed  |
-| opacity  | 透明度         | number            | 0 ~ 1             | 0.46   |
-| teleport | 插入节点       | string \| element | -                 | -      |
-| z-index  | z-index 层级   | number            | -                 | 1      |
+| 参数                 | 说明                                             | 类型              | 可选值            | 默认值 |
+| -------------------- | ------------------------------------------------ | ----------------- | ----------------- | ------ |
+| v-model:visible      | 是否显示遮罩层                                   | boolean           | -                 | false  |
+| position             | 定位方式                                         | string            | fixed \| absolute | fixed  |
+| opacity              | 透明度                                           | number            | 0 ~ 1             | 0.46   |
+| teleport             | 插入节点                                         | string \| element | -                 | -      |
+| z-index              | z-index 层级                                     | number            | -                 | 1      |
+| duration             | 动画时长，单位秒                                 | number \| string  | -                 | 0.2    |
+| lock-scroll          | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | boolean           | true \| false     | true   |
+| close-on-click-modal | 点击遮罩层是否可关闭                             | boolean           | true \| false     | true   |
+| class-name           | 自定义类名                                       | string            | -                 | -      |
+| custom-style         | 自定义样式                                       | object            | -                 | -      |

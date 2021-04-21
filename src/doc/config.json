@@ -2,8 +2,7 @@
   "docs": {},
   "nav": [{
       "name": "基础组件",
-      "packages": [
-        {
+      "packages": [{
           "name": "Button",
           "sort": 1,
           "url": "/Button/src",
@@ -32,6 +31,14 @@
           "sort": 1,
           "url": "/Overlay/src",
           "cName": "遮罩层",
+          "type": "component",
+          "show": true
+        },
+        {
+          "name": "TimePicker",
+          "sort": 1,
+          "url": "/TimePicker/src",
+          "cName": "时间组件",
           "type": "component",
           "show": true
         }

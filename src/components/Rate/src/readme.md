@@ -8,7 +8,7 @@ wrapperClass: md-Rate
 ```vue demo
 <template>
     <div > 
-        <Rate v-model="value" half />
+        <Rate v-model="value" />
     </div>
 </template>
 <script lang="ts">

@@ -24,7 +24,7 @@ export const useIcon = function (props: iconProps): VNode | null {
     {
       class: classes.value,
       style: {
-        padding: `${props.gutter === undefined ? 5 : props.gutter}px`,
+        padding: `${props.gutter === undefined ? 0 : props.gutter}px`,
         color: props.color,
         fontSize: `${props.size || 20}px`
       }

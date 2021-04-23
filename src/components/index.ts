@@ -4,9 +4,10 @@ import { Row } from './Row/index'
 import { Button } from './Button/index'
 import { Icon } from './Icon/index'
 import { Rate } from './Rate/index'
+import { Overlay } from './Overlay/index'
 
 function install(app: App): void {
-  const packages = [Row, Col, Button, Icon, Rate]
+  const packages = [Row, Col, Button, Icon, Rate, Overlay]
   packages.forEach((item: any) => {
     if (item.install) {
       app.use(item)

@@ -14,7 +14,7 @@ export default defineConfig({
     vitePluginVuedoc({
       wrapperClass: 'warpper_doc'
     }),
-    vue({
+    vue({ 
       include: [...vueDocFiles]
     })
   ],
@@ -36,6 +36,7 @@ export default defineConfig({
       entry: 'src/doc/main.ts',
       name: 'main',
       formats: ['es']
-    }
+    },
+
   }
 })

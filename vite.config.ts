@@ -29,6 +29,9 @@ export default defineConfig({
     }
   },
   build: {
+    rollupOptions: {
+      external: ['vue']
+    },
     lib: {
       entry: 'src/doc/main.ts',
       name: 'main',

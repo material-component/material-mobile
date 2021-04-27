@@ -14,7 +14,7 @@ export default defineConfig({
     vitePluginVuedoc({
       wrapperClass: 'warpper_doc'
     }),
-    vue({
+    vue({ 
       include: [...vueDocFiles]
     })
   ],
@@ -29,13 +29,11 @@ export default defineConfig({
     }
   },
   build: {
-    rollupOptions: {
-      external: ['vue']
-    },
     lib: {
       entry: 'src/doc/main.ts',
       name: 'main',
       formats: ['es']
-    }
+    },
+
   }
 })

@@ -34,7 +34,6 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const totalLenth = new Array(props.count).fill('')
-
     return () => (
       <div class="rate">
         {totalLenth.map((v, i) => {

@@ -27,7 +27,7 @@ export const useIcon = function (props: iconProps): VNode | null {
         padding: `${props.gutter === undefined ? 0 : props.gutter}px`,
         color: props.color,
         fontSize: `${props.size || 20}px`
-      }
+      },
     },
     props.loading && !props.icon ? 'autorenew' : props.icon
   )

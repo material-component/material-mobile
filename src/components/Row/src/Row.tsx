@@ -25,7 +25,6 @@ export default defineComponent({
     const classes = computed(() => ['row'])
 
     return () =>
-      //@ts-ignore
       h(
         tag.value,
         {

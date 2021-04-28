@@ -52,7 +52,7 @@
 
 ```vue demo
 <template>
-  <Button type="primary"><img src="baidu.com" />启用状态</Button>
+  <Button type="primary"><img src="" />启用状态</Button>
   <Button type="primary" disabled>禁用状态</Button>
 </template>
 ```

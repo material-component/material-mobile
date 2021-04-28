@@ -3,13 +3,31 @@ import './style.sass'
 
 import { h, defineComponent } from 'vue'
 
+// type
+import type { AllowedComponentProps } from 'vue'
+
 export default defineComponent({
   name: 'Picker',
-
+  props: {
+    width: {
+      type: [Number, String],
+      default: 290
+    }
+  },
   setup(props, { slots }: any) {
-    const generateCom = (slotName: string) =>
+    const generateComponents = (
+      slotName: string,
+      style: AllowedComponentProps
+    ) =>
       slots[slotName]
-        ? h('div', { class: `picker__${slotName}` }, [slots[slotName]()])
+        ? h(
+            'div',
+            {
+              class: `picker__${slotName}`,
+              ...style
+            },
+            [slots[slotName]()]
+          )
         : null
 
     const Container = () =>
@@ -18,9 +36,15 @@ export default defineComponent({
         {
           class: 'picker'
         },
-        [generateCom('title')]
+        [
+          generateComponents('title', {}),
+          generateComponents('body', {
+            style: {
+              width: `${props.width}px`
+            }
+          })
+        ]
       )
-
     return Container
   }
 })

@@ -24,6 +24,7 @@ module.exports = {
     '@vue/prettier/@typescript-eslint'
   ],
   rules: {
+    'prettier/prettier': 'off',
     'no-var': 'error',
     'object-shorthand': 2,
     'no-undef': 2,

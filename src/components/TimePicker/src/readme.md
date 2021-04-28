@@ -4,7 +4,7 @@
 ```vue demo
 <template>
   <div>
-    <time-picker></time-picker>
+    <time-picker ></time-picker>
   </div>
 </template>
 ```

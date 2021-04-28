@@ -18,7 +18,6 @@ export default defineComponent({
 
   props: {
     ...props,
-
     index: {
       type: Number,
       required: true
@@ -37,7 +36,6 @@ export default defineComponent({
             onClick(event: MouseEvent) {
               event.preventDefault()
               event.stopPropagation()
-
               emit('change', event, clickArea(event, props.index))
             }
           },

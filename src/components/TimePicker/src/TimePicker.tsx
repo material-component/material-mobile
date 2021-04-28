@@ -6,18 +6,36 @@ import { h, defineComponent } from 'vue'
 // component
 import Picker from './Picker'
 
+// props
+import { props } from './timePickerProps'
+
+// compnents
+import ClockPicker from './ClockPicker'
+
 export default defineComponent({
   name: 'TimePicker',
+
+  props,
+
   components: {
-    Picker
+    Picker,
+    ClockPicker
   },
-  setup() {
+  setup(props) {
     return () =>
       h(
         Picker,
-        {},
         {
-          title: () => h('span', '2323')
+          width: props.width
+        },
+        {
+          title: () => h('span', '2323'),
+          body: () =>
+            h(ClockPicker, {
+              min: 1,
+              max: 12,
+              value: 0
+            })
         }
       )
   }

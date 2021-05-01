@@ -14,7 +14,7 @@ export const props = {
     default: 0
   },
   value: {
-    type: [Number],
+    type: Number,
     default: 0
   },
   step: {
@@ -25,5 +25,7 @@ export const props = {
     type: Function,
     default: (val: string | number) => val
   },
-  double: Boolean
+  double: Boolean,
+  color: String,
+  disabled: Boolean
 }

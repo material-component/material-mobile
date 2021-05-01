@@ -34,7 +34,8 @@ export default defineComponent({
             h(ClockPicker, {
               min: 1,
               max: 12,
-              value: 0
+              value: 2,
+              disabled: true
             })
         }
       )

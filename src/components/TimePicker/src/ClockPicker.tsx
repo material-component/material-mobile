@@ -1,14 +1,18 @@
 //style
 import './style.sass'
 
-import { h, defineComponent, toRefs, unref, ref, computed } from 'vue'
+import { h, defineComponent, toRefs, unref, computed } from 'vue'
 
 // props
 import { props } from './clockPickerProps'
 
 // type
-import type { VNodeChild, Ref } from 'vue'
-import type { ClockPickerPropType, GenChildrenType } from './types'
+import type { VNodeChild } from 'vue'
+import type {
+  ClockPickerPropType,
+  GenChildrenType,
+  UseGenerateChildrenType
+} from './types'
 
 const RADIUSSCALE = 0.62
 
@@ -17,36 +21,95 @@ export default defineComponent({
   props,
 
   setup(props) {
+    const { generateItem, generateHand } = useGenerateChildren(props)
+
+    const touchstart = () => {}
+
     return () => (
       <div class="clock-picker__container">
-        <div class="clock-picker">{generateItem(props)}</div>
+        <div class="clock-picker">
+          <div
+            onTouchstart={touchstart}
+            class="clock-picker__inner"
+            ref="innerClock"
+          >
+            {generateHand()}
+            {generateItem()}
+          </div>
+        </div>
       </div>
     )
   }
 })
 
-const generateItem = (props: ClockPickerPropType) => {
-  const children: Ref<VNodeChild[]> = ref([])
-  const { min, max, step, format, value, rotate, double } = toRefs(props)
+function useGenerateChildren(
+  props: ClockPickerPropType
+): UseGenerateChildrenType {
+  const {
+    min,
+    max,
+    step,
+    format,
+    value,
+    rotate,
+    double,
+    color,
+    disabled
+  } = toRefs(props)
+  const { displayedValue, degreesPerUnit, degrees, roundCount } = useComputed()
 
-  for (let val = min.value; val <= max.value; val = val + step.value) {
-    children.value.push(
-      genChildren({
-        style: getTransform(val),
-        class: 'clock-picker__item',
-        innerHTML: `<span>${format.value(unref(val))}</span>`
-      })
-    )
+  return {
+    generateItem,
+    generateHand
   }
 
-  return h(
-    'div' as any,
-    {
-      class: 'clock-picker__inner',
-      ref: 'innerClock'
-    },
-    [children.value]
-  )
+  function generateHand() {
+    const scale = `scaleY(${handScale(displayedValue.value)})`
+    const angle =
+      rotate.value + degreesPerUnit.value * (displayedValue.value - min.value)
+    const _color = value.value != null && (unref(color) || '#1867c0')
+
+    return h('div', {
+      class: [
+        'clock-picker__hand',
+        `${isInner(unref(value)) ? 'clock-picker__hand--inner' : ''}`
+      ],
+      style: {
+        'background-color': `${_color}`,
+        'border-color': `${_color}`,
+        transform: `rotate(${angle}deg) ${scale}`
+      }
+    })
+  }
+
+  function generateItem() {
+    const children = []
+
+    for (let val = min.value; val <= max.value; val = val + step.value) {
+      const _color = val === value.value && (unref(color) || '#1867c0')
+
+      children.push(
+        genChildren({
+          style: {
+            ...getTransform(val),
+            backgroundColor: `${_color}`,
+            borderColor: `${_color}`,
+            color: `${val === displayedValue.value ? 'hsla(0,0%,100%,.3)' : ''}`
+          },
+          class: [
+            'clock-picker__item',
+            `${
+              val === displayedValue.value ? 'clock-picker__item--active' : ''
+            }`,
+            `${unref(disabled) ? 'clock-picker__item--disabled' : ''}`
+          ],
+          innerHTML: `<span>${format.value(unref(val))}</span>`
+        })
+      )
+    }
+
+    return children
+  }
 
   function genChildren(prop: GenChildrenType): VNodeChild {
     return h('span', prop)
@@ -62,7 +125,6 @@ const generateItem = (props: ClockPickerPropType) => {
   }
 
   function getPosition(i: number) {
-    const { degrees } = useComputed()
     const rotateRadians = (rotate.value * Math.PI) / 180
 
     return {
@@ -80,7 +142,6 @@ const generateItem = (props: ClockPickerPropType) => {
   }
 
   function isInner(value: number) {
-    const { roundCount } = useComputed()
     return double.value && value - min.value >= roundCount.value
   }
 
